@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login/wid_tries.dart';
 import 'settings.dart';
 import 'login.dart';
 
@@ -40,12 +41,14 @@ class _MyHomePageState extends State<MyHomePage>{
   String _appTitle="Login Demo";
   Widget _screen;
   Login _login;
+  WidTries _tries;
   Settings _settings;
   bool _authenticated;
 
   //bad way to change screen
   _MyHomePageState(){
     _login= new Login(onSubmit: (){onSubmit();});
+    _tries= new WidTries();
     _settings= new Settings(onLogout: (){onLogout();});
     _screen= _login;
     _authenticated= false;
